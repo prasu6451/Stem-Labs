@@ -1,0 +1,101 @@
+/* ===== Admin Sidebar ===== */
+
+:root{
+  --bg-main:#071026;
+  --bg-sidebar:#071527;
+  --accent:#6ee7b7;
+  --accent-2:#7dd3fc;
+  --text:#e6eef8;
+  --muted:#94a3b8;
+  --hover:rgba(255,255,255,.05);
+  --border:rgba(255,255,255,.06);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:var(--bg-main);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+/* Sidebar container */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:260px;
+  height:100vh;
+  background:linear-gradient(180deg,#071527,#04121a);
+  padding:28px 20px;
+  border-right:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Brand title */
+.sidebar > div{
+  color:#eaf6f0;
+  letter-spacing:.3px;
+}
+
+/* Links */
+.sidebar a{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  margin-bottom:8px;
+  border-radius:12px;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  transition:all .18s ease;
+}
+
+/* Hover */
+.sidebar a:hover{
+  background:var(--hover);
+  color:var(--text);
+}
+
+/* Active page */
+.sidebar a.active{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#022;
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(34,197,94,.18);
+}
+
+/* Push content right */
+.main{
+  margin-left:260px;
+  padding:32px;
+}
+
+/* Responsive (mobile) */
+@media(max-width:900px){
+  .sidebar{
+    width:220px;
+  }
+  .main{
+    margin-left:220px;
+  }
+}
+
+@media(max-width:680px){
+  .sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+    border-right:none;
+    border-bottom:1px solid var(--border);
+  }
+  .main{
+    margin-left:0;
+  }
+}
